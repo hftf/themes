@@ -1,0 +1,44 @@
+function midplay {
+	fluidsynth -g1 -i /usr/local/share/fluidsynth/gs_sf_144.sf2 "$@" > /dev/null 2>&1 &
+}
+
+CC='\033[0;97;41m'
+BC='\033[1m'
+NC='\033[0m'
+
+while true; do
+	line=`gshuf -n 1 tsvs/themes.tsv`
+	IFS=$'\t' read id last first theme <<< "$line"
+	printf "%-6s   %-48b   %s\n" "[$id]" "${CC} $first ${BC}$last ${NC}" "$theme"
+	say "$last"
+	replay=true
+	while [ "$replay" = "true" ]; do
+		replay=false
+		midplay midis/$id.mid
+		pid="$!"
+		read -p "Add? [Y]es [N]o [R]eplay [Q]uit " -n 1 -r
+		echo
+		{ kill "$pid"; wait "$pid"; } 2>/dev/null
+		case $REPLY in
+		[yY])
+			status="y"
+			;;
+		[mM])
+			status="m"
+			;;
+		[nN])
+			status="n"
+			;;
+		[qQ])
+			echo
+			break 2
+			;;
+		*)
+			replay=true
+			;;
+		esac
+		echo "$status	$id" >> tsvs/known.tsv
+	done
+	sleep 0.5
+	echo
+done
