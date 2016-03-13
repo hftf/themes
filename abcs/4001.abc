@@ -1,0 +1,11 @@
+X: 4001
+T: Concerto, 1st. Mvt. - 3rd. Theme
+C: Darius Milhaud
+M: 4/4
+L: 1/16
+Q:1/4=120
+K:C % 0 sharps
+c4 c2 c2 c4 ^A2 c2| \
+^d2 ^c4 =c2 ^A8| \
+^G2 F2 ^G4 =g4 =d2 ^d2| \
+c4 

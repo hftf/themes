@@ -1,0 +1,14 @@
+X: 4223
+T: Don Giovanni, Opera, Overture, K 527, 1st. Theme
+C: Wolfgang Amadeus Mozart
+M: 2/2
+L: 1/16
+Q:1/4=120
+K:D % 2 sharps
+d16| \
+^d16| \
+e4 g8 f4| \
+e4 b8 a4| \
+a2 g2 g2 g2 g2 f2 f2 f2| \
+f2 e2 e2 e2 =d2 c2 B2 c2| \
+d4 

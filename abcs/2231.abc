@@ -1,0 +1,11 @@
+X: 2231
+T: Concerto Grosso in A, Op. 6, No. 11, 3rd. Mvt.
+C: George Frideric Handel
+M: 4/4
+L: 1/16
+Q:1/4=120
+K:A % 3 sharps
+A4 z4 ^A/2B/2^A/2B/2 ^A/2B/2^A/2B/2 ^A/2B/2^A/2B/2 zB| \
+B4 z4 ^d/2e/2^d/2e/2 ^d/2e/2^d/2e/2 ^d/2e/2^d/2e/2 ze| \
+e4 z4 =f/2^f/2=f/2^f/2 =f/2^f/2=f/2^f/2 =f/2^f/2=f/2^f/2 z=f| \
+^f4 

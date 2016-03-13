@@ -1,0 +1,12 @@
+X: 0239
+T: Partita No. 5 in G, Courante
+C: Johann Sebastian Bach
+M: 3/8
+L: 1/16
+Q:1/4=120
+K:G % 1 sharps
+def gdB| \
+dGB dBg| \
+dbg afd| \
+fAd fda| \
+fc'a 

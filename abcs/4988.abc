@@ -1,0 +1,11 @@
+X: 4988
+T: Peter and the Wolf, Op. 67, 4th. Theme, The Cat
+C: Serge Prokofieff
+M: 4/4
+L: 1/16
+Q:1/4=120
+K:C % 0 sharps
+D,2 G,2 B,4 G,2 D,2 ^C,4| \
+D,2 G,2 B,2 D4<=C4 B,2| \
+G,2 A,2 B,2 A,2 ^F,2 G,2 A,2 G,2| \
+E,2 ^F,2 G,8 

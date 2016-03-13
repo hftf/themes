@@ -1,0 +1,12 @@
+X: 4608
+T: Symphony No. 41, in C, K 551, 1st. Mvt. - 2nd. Theme
+C: Wolfgang Amadeus Mozart
+M: 4/4
+L: 1/16
+Q:1/4=120
+K:C % 0 sharps
+g12 ^g4| \
+a4 z12| \
+z4 c'3a ^f2 z2 ^f2 z2| \
+=g/2a/2g/2a/2 g/2a/2g/2a/2 g/2a/2g/2a/2 ^fe d2 z2 d3e| \
+c2 z2 c3d B2 

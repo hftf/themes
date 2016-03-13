@@ -1,0 +1,12 @@
+X: 7157
+T: Dumbarton Oaks Concerto, 2nd. Mvt.
+C: Igor Stravinsky
+M: 3/8
+L: 1/16
+Q:1/4=120
+K:Bb % 2 flats
+zf=e f/2z/2_ef/2z/2| \
+dfz f=ef/2z/2| \
+zf=e f/2z/2_ef/2z/2| \
+dfz f=ef| \
+bd/2

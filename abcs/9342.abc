@@ -1,0 +1,14 @@
+X: 9342
+T: Waltzes, Op. 64, No. 1 in D Flat "Minute", Themes A and B
+C: Frederic Chopin
+M: 3/4
+L: 1/16
+Q:1/4=120
+K:Db % 5 flats
+a4=g2 a2c'2b2| \
+=g2a2b2 a2c'2b2| \
+z8a4-| \
+a8e4| \
+a8=e4| \
+a8f4| \
+f'8

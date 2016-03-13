@@ -1,0 +1,13 @@
+X: 0755
+T: Quartet in C Sharp Minor, Op. 131, 4th. Mvt.
+C: Ludwig Van Beethoven
+M: 2/4
+L: 1/16
+Q:1/4=120
+K:A % 3 sharps
+z2 A4 BA| \
+G2 G4 AG| \
+d2 d4 ed| \
+c2 c4 dc| \
+a2 a4 =g=f| \
+=f2 ^f4 

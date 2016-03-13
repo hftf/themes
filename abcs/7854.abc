@@ -1,0 +1,18 @@
+X: 7854
+T: A Faust Overture, 4th. Theme
+C: Richard Wagner
+M: 2/2
+L: 1/16
+Q:1/4=120
+K:F % 1 flats
+d16| \
+d'12 c'4| \
+b16| \
+g12 e4| \
+a16-| \
+a12 g4| \
+f8 d'8-| \
+d'12 c'4| \
+b16| \
+a12 g4| \
+c'16| \

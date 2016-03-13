@@ -1,0 +1,12 @@
+X: 7802
+T: Concerto in C, 3rd. Mvt.
+C: Antonio Vivaldi
+M: 2/4
+L: 1/16
+Q:1/4=120
+K:C % 0 sharps
+e'f' g'e' f'd' c'2| \
+ef ge fd c2| \
+gf eg c'b af| \
+d'c' bg e'd' c'a| \
+f'e' 

@@ -1,0 +1,11 @@
+X: 1699
+T: Symphonic Variations, Pft., 1st. Theme
+C: Cesar Franck
+M: 4/4
+L: 1/16
+Q:1/4=120
+K:A % 3 sharps
+c2 =c2 A4 G4 z4| \
+^c2 =c2 A4 G4 z4| \
+f2 =f2 d4 ^c2 B2 A4| \
+G2 ^F2 G4 F4 

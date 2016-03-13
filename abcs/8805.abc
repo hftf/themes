@@ -1,0 +1,14 @@
+X: 8805
+T: Trio in C, Op. 87, 1st. Mvt. - 2nd. Theme
+C: Johannes Brahms
+M: 3/4
+L: 1/16
+Q:1/4=120
+K:C % 0 sharps
+^a4b4c'4-| \
+c'2b2=a4g4| \
+^f4g4b4-| \
+b2a2g4^f4| \
+^d4e4=f4| \
+^d4e4a4-| \
+a2g2g4
