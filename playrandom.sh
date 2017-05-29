@@ -4,12 +4,13 @@ function midplay {
 
 CC='\033[0;97;41m'
 BC='\033[1m'
+UC='\033[4m'
 NC='\033[0m'
 
 while true; do
 	line=`gshuf -n 1 tsvs/themes.tsv`
-	IFS=$'\t' read id last first theme <<< "$line"
-	printf "%-6s   %-48b   %s\n" "[$id]" "${CC} $first ${BC}$last ${NC}" "$theme"
+	IFS=$'\t' read id last first theme yt <<< "$line"
+	printf "%-6s   %-48b   %s	%b\n" "[$id]" "${CC} $first ${BC}$last ${NC}" "$theme" "${UC}$yt${NC}"
 	say "$last"
 	replay=true
 	while [ "$replay" = "true" ]; do
