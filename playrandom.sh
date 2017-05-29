@@ -7,11 +7,38 @@ BC='\033[1m'
 UC='\033[4m'
 NC='\033[0m'
 
+case "$1" in
+	y)
+		recall="y"
+		;;
+	n)
+		recall="n"
+		;;
+	*)
+		recall="0"
+		;;
+esac
+
 while true; do
-	line=`gshuf -n 1 tsvs/themes.tsv`
+	if [ "$recall" = "0" ]; then
+		# random sample of all themes
+		line=`gshuf -n 1 tsvs/themes.tsv`
+	else
+		# random sample of themes where known = $recall
+		line=$(eval "grep $recall\$ tsvs/known.tsv | gshuf -n 1")
+		# get the id
+		IFS=$'\t' read lid yn <<< "$line"
+		# join on id
+		line=$(eval "grep ^$lid\ tsvs/themes.tsv")
+		echo $line
+	fi
+
 	IFS=$'\t' read id last first theme yt <<< "$line"
-	printf "%-6s   %-48b   %s	%b\n" "[$id]" "${CC} $first ${BC}$last ${NC}" "$theme" "${UC}$yt${NC}"
-	say "$last"
+	info=$(printf "%-6s   %-48b   %s	%b\n" "[$id]" "${CC} $first ${BC}$last ${NC}" "$theme" "${UC}$yt${NC}")
+	if [ "$recall" = "0" ]; then
+		echo "$info"
+		say "$last"
+	fi
 	replay=true
 	while [ "$replay" = "true" ]; do
 		replay=false
@@ -46,8 +73,14 @@ while true; do
 			replay=true
 			;;
 		esac
-		echo "$status	$id" >> tsvs/known.tsv
+
 	done
+	if [ "$recall" = "0" ]; then
+		# add to known.tsv
+		echo "$id	$status" >> tsvs/known.tsv
+	else
+		echo "$info"
+	fi
 	sleep 0.5
 	echo
 done
