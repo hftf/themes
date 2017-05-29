@@ -16,7 +16,7 @@ while true; do
 		replay=false
 		midplay midis/$id.mid
 		pid="$!"
-		read -p "Add? [Y]es [N]o [R]eplay [Q]uit " -n 1 -r
+		read -p "Add? [Y]es [m]aybe [N]o [p]rint [s]peak [R]eplay [Q]uit " -n 1 -r
 		echo
 		{ kill "$pid"; wait "$pid"; } 2>/dev/null
 		case $REPLY in
@@ -25,6 +25,14 @@ while true; do
 			;;
 		[mM])
 			status="m"
+			;;
+		[sS])
+			say -r 350 "$last; $theme"
+			replay=true
+			;;
+		[pP])
+			echo "$info"
+			replay=true
 			;;
 		[nN])
 			status="n"
