@@ -40,11 +40,12 @@ while true; do
 		# say "$last"
 	fi
 	replay=true
+	status="0"
 	while [ "$replay" = "true" ]; do
 		replay=false
 		midplay midis/$id.mid
 		pid="$!"
-		read -p "Add? [Y]es [m]aybe [N]o   [L]ink [o]pen   [p]rint [s]peak l[a]st   [R]eplay [Q]uit " -n 1 -r
+		read -p "Add? [Y]es [m]aybe [N]o   [L]ink [o]pen   [p]rint [s]peak l[a]st   [R]eplay s[k]ip [Q]uit " -n 1 -r
 		echo
 		{ kill "$pid"; wait "$pid"; } 2>/dev/null
 		case $REPLY in
@@ -85,6 +86,8 @@ while true; do
 			replay=true
 			;;
 
+		[kK])
+			;;
 		[qQ])
 			echo
 			break 2
@@ -95,12 +98,19 @@ while true; do
 		esac
 
 	done
+
+	if [ "$status" = "0" ]; then
+		echo
+		continue
+	fi
+
 	if [ "$recall" = "0" ]; then
 		# add to known.tsv
 		echo "$id	$status" >> tsvs/known.tsv
 	else
 		echo "$info"
 	fi
+
 	sleep 0.5
 	echo
 done
