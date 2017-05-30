@@ -44,7 +44,7 @@ while true; do
 		replay=false
 		midplay midis/$id.mid
 		pid="$!"
-		read -p "Add? [Y]es [m]aybe [N]o   [p]rint [s]peak l[a]st   [R]eplay [Q]uit " -n 1 -r
+		read -p "Add? [Y]es [m]aybe [N]o   [L]ink [o]pen   [p]rint [s]peak l[a]st   [R]eplay [Q]uit " -n 1 -r
 		echo
 		{ kill "$pid"; wait "$pid"; } 2>/dev/null
 		case $REPLY in
@@ -56,6 +56,20 @@ while true; do
 			;;
 		[nN])
 			status="n"
+			;;
+
+		[lL])
+			read -p "Enter YouTube link? " -r
+			# find line starting with $id
+			# then add $REPLY at the end of the line
+			sed -i bak "/^$id	/ s|$|	$REPLY|" tsvs/themes.tsv
+			replay=true
+			;;
+		[oO])
+			if [ -n "$yt" ]; then
+				open "$yt"
+			fi
+			replay=true
 			;;
 
 		[pP])
