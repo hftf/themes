@@ -67,7 +67,18 @@ while true; do
 	IFS=$'\t' read id last first theme yt <<< "$line"
 	info=$(printf "%-6s   %-48b   %s	%b\n" "[$id]" "${CC} $first ${BC}$last ${NC}" "$theme" "${UC}$yt${NC}")
 	if [ "$recall" = "0" ]; then
-		grep ^$id tsvs/known.tsv | cut -f 2
+		known=$(eval grep ^$id tsvs/known.tsv | cut -f 2)
+		if [ -n "$known" ]; then
+			case $known in
+				y)
+					play -n synth 0.5 sin %-4.5 sin %-1.5 fade h 0.1 0.3 2>/dev/null
+					;;
+				n)
+					play -n synth 0.4 exp %-11.8 exp %-9.3 exp %-6.2 fade h 0.1 0.2 2>/dev/null
+					;;
+			esac
+		fi
+		echo $known
 		echo "$info"
 		# echo "$last" | pronounce | say -r 240
 	fi
