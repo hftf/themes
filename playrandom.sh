@@ -81,6 +81,10 @@ while true; do
 		echo $known
 		echo "$info"
 		# echo "$last" | pronounce | say -r 240
+	else
+		if [ -n "$yt" ]; then
+			echo -e "${UC}$yt${NC}"
+		fi
 	fi
 	replay=true
 	status="0"
