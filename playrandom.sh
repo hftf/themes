@@ -2,6 +2,38 @@ function midplay {
 	fluidsynth -g1 -i /usr/local/share/fluidsynth/gs_sf_144.sf2 "$@" > /dev/null 2>&1 &
 }
 
+function pronounce {
+	sed "
+	s/Adam/a dom/;
+	s/Auber/obay/;
+	s/Balakirev/baaluh keerev/;
+	s/Buxtehude/books tahooda/;
+	s/Chausson/show son/;
+	s/Debussy/[[inpt PHON]]dEHbyUWs1IY[[inpt TEXT]]/;
+	s/Delius/[[inpt PHON]]dIYlIYUXs[[inpt TEXT]]/;
+	s/D'Indy/dan dee/;
+	s/Falla/[[inpt PHON]]fAYAX[[inpt TEXT]]/;
+	s/Franck/fronk/;
+	s/Ibert/ee bear/;
+	s/Lekeu/lakoo/;
+	s/Lully/loo lee/;
+	s/Malipiero/molly pee arrow/;
+	s/Milhaud/me yo/;
+	s/Pierné/peair nay/;
+	s/Prokofiev/prokofee'ev/;
+	s/Ravel/[[inpt PHON]]rAX1vEH0l[[inpt TEXT]]/;
+	s/Roussel/[[inpt PHON]]rUWs1EHl[[inpt TEXT]]/;
+	s/Scriabin/Scriaabin/;
+	s/Sousa/sooza/;
+	s/Suppé/suepay/;
+	s/Tartini/[[inpt PHON]]tAArt1IYnIH[[inpt TEXT]]/;
+	s/Vieuxtemps/[[inpt PHON]]vyUHht1AAm[[inpt TEXT]]/;
+	s/Walton/[[inpt PHON]]wAOltAHn[[inpt TEXT]]/;
+	s/Waldteufel/vald toyfl/;
+	s/Weber/Vaber/;
+	s/Wolf$/voulf/"
+}
+
 CC='\033[0;97;41m'
 BC='\033[1m'
 UC='\033[4m'
@@ -38,7 +70,7 @@ while true; do
 	if [ "$recall" = "0" ]; then
 		grep ^$id tsvs/known.tsv | cut -f 2
 		echo "$info"
-		# say "$last"
+		# echo "$last" | pronounce | say -r 240
 	fi
 	replay=true
 	status="0"
@@ -79,11 +111,11 @@ while true; do
 			replay=true
 			;;
 		[sSjJ])
-			say -r 350 "$last; $theme"
+			echo "$last; $theme" | pronounce | say -r 350
 			replay=true
 			;;
 		[aAuU])
-			say "$last"
+			echo "$last" | pronounce | say -r 240
 			replay=true
 			;;
 
