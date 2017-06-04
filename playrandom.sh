@@ -61,8 +61,7 @@ while true; do
 		# get the id
 		IFS=$'\t' read lid yn <<< "$line"
 		# join on id
-		line=$(eval "grep ^$lid\ tsvs/themes.tsv")
-		echo $line
+		line=$(eval "grep ^$lid tsvs/themes.tsv")
 	fi
 
 	IFS=$'\t' read id last first theme yt <<< "$line"
@@ -78,11 +77,11 @@ while true; do
 		replay=false
 		midplay midis/$id.mid
 		pid="$!"
-		read -p "Add? [Y]es [m]aybe [N]o   [L]ink [o]pen   [p]rint [s]peak l[a]st   [R]eplay s[k]ip [Q]uit " -n 1 -r
+		read -p "Add? [Y]es [m]aybe [N]o   [L]ink [o]pen   [p]rint [s]peak l[a]st   [R]eplay [j]-Next [Q]uit " -n 1 -r
 		echo
 		{ kill "$pid"; wait "$pid"; } 2>/dev/null
 		case $REPLY in
-		[yY])
+		[yYkK])
 			status="y"
 			;;
 		[mM])
@@ -110,7 +109,7 @@ while true; do
 			echo "$info"
 			replay=true
 			;;
-		[sSjJ])
+		[sSiI])
 			echo "$last; $theme" | pronounce | say -r 350
 			replay=true
 			;;
@@ -119,7 +118,7 @@ while true; do
 			replay=true
 			;;
 
-		[kK])
+		[jJ])
 			;;
 		[qQ])
 			echo
